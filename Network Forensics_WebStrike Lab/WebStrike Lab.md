@@ -69,3 +69,12 @@ Tool: Wireshark
 | Victim IPv4 | 24.49.63.79 | Compromised Web Server |
 | Malicious File | image.jpg.php | file php được nguỵ trang thành JPEG file image. |
 | User-Agent | User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0  | Kali Linux default browsers. |
+(Initial Access): Khai thác lỗ hổng tải lên tệp không bị giới hạn trên đường dẫn /reviews/upload.php bằng kỹ thuật "đuôi tệp kép" (double-extension bypass), cụ thể là image.jpg.php.
+
+Đối tượng tấn công hoạt động từ địa chỉ IP 117.11.88.124 Tianjin, China, sử dụng bản phân phối Kali Linux mặc định, cho thấy kẻ tấn công không che giấu kỹ càng 
+
+Thực thi (Execution): Một mã đội dạng "reverse shell" (kết nối ngược) bằng PHP đã được tải lên và kích hoạt, thiết lập kết nối liên tục (persistent connection) trở lại kẻ tấn công qua cổng TCP 8080.
+
+ (Post-Exploitation): Kẻ tấn công thực hiện trinh sát nội bộ với quyền người dùng www-data và đã đánh cắp thành công tệp /etc/passwd bằng lệnh curl qua cổng 443.
+
+Impact: Dữ liệu cấu hình nhạy cảm của hệ thống đã bị đánh cắp ra ngoài, có khả năng làm lộ thông tin tài khoản người dùng và tạo điều kiện cho các cuộc tấn công tiếp theo.
