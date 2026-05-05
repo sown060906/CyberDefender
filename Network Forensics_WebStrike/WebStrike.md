@@ -6,7 +6,7 @@ Your task is to analyze the provided PCAP file to uncover how the file appeared 
 
 Tool: Wireshark 
 # Q1:
-![alt text](image.png)
+![alt text](./images/image.png)
 ### Solution:
 - Đề yêu cầu tìm xem cuộc tấn công xuất phát từ thành phố nào.
 - Sau khi mở Wiresshark ta thấy rằng source IP là 117.11.88.124
